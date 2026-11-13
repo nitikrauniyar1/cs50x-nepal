@@ -1,12 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import { testimonials } from "@/data/testimonials";
 
 export default function Testimonials({ page = false }) {
   const MainHeading = page ? "h1" : "h2";
   const [active, setActive] = useState(0);
+  const touchStart = useRef(null);
   const total = testimonials.length;
   const story = testimonials[active];
 
@@ -22,6 +23,22 @@ export default function Testimonials({ page = false }) {
       event.preventDefault();
       move(1);
     }
+  };
+
+  const handleTouchStart = (event) => {
+    const touch = event.changedTouches[0];
+    touchStart.current = { x: touch.clientX, y: touch.clientY };
+  };
+
+  const handleTouchEnd = (event) => {
+    if (!touchStart.current) return;
+    const touch = event.changedTouches[0];
+    const deltaX = touch.clientX - touchStart.current.x;
+    const deltaY = touch.clientY - touchStart.current.y;
+    touchStart.current = null;
+
+    if (Math.abs(deltaX) < 48 || Math.abs(deltaX) < Math.abs(deltaY) * 1.2) return;
+    move(deltaX < 0 ? 1 : -1);
   };
 
   return (
@@ -41,6 +58,10 @@ export default function Testimonials({ page = false }) {
           aria-label="Learner testimonials"
           tabIndex={0}
           onKeyDown={handleKeyDown}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+          onTouchCancel={() => { touchStart.current = null; }}
+          style={{ touchAction: "pan-y" }}
         >
           <figure key={active} className="testimonial-quote-enter testimonial-card rounded-[1.5rem] px-6 py-8 sm:rounded-[1.75rem] sm:px-10 sm:py-10 lg:px-12 lg:py-11" aria-live="polite">
             <Quote className="h-8 w-8 text-crimson sm:h-9 sm:w-9" strokeWidth={2.2} aria-hidden="true" />
