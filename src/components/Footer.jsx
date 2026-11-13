@@ -68,7 +68,7 @@ export default function Footer() {
       <div className="border-t border-ink/10">
         <div className="container-x flex flex-col gap-3 py-5 text-xs text-ink-mute sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} CS50x Nepal. All rights reserved.</p>
-          <p className="text-crimson">Made with love by Nitik Rauniyar ♥</p>
+          <p className="text-crimson">Made with love by <ExtLink href="https://nitikrauniyar.com.np/" className="underline-offset-4 hover:underline">Nitik Rauniyar</ExtLink> ♥</p>
           <Link href="/" className="transition-all hover:-translate-y-0.5 hover:text-crimson">Back to home ↑</Link>
         </div>
       </div>
