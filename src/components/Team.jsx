@@ -21,7 +21,7 @@ export default function Team() {
             <p className="eyebrow text-crimson">Instructors</p>
             <h2 className="mt-4 font-display text-4xl font-bold leading-tight sm:text-5xl">Meet the people behind the duck.</h2>
             <p className="mt-5 text-ink-mute">
-              Portraits are temporary placeholders. Replace them from <code className="font-mono text-sm">src/config/images.js</code>.
+              Learn with experienced educators and technology professionals bringing practical insight from across the field.
             </p>
           </div>
           <ul className="divide-y divide-ink/15 border-y border-ink/15">
@@ -30,7 +30,7 @@ export default function Team() {
                 <Reveal className="group interactive-card glass-surface flex gap-5 rounded-2xl p-4">
                   <Img
                     src={p.photo || portraitFor(i)}
-                    alt={`Placeholder portrait for ${p.name}`}
+                    alt={p.photo ? `Portrait of ${p.name}` : ""}
                     width={96}
                     height={96}
                     className="image-zoom h-20 w-20 shrink-0 rounded-2xl object-cover sm:h-24 sm:w-24"
