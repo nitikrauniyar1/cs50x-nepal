@@ -18,6 +18,7 @@ html[data-theme="light"] {
   --crimson-fill: 217 35 50;
   --crimson-hover: 183 25 43;
   --heading-red: 189 27 41;
+  --testimonial-card: 255 250 240;
   --glass-bg: 255 255 255;
   --glass-edge: 255 255 255;
   --glass-shine: 255 255 255;
@@ -36,6 +37,7 @@ html[data-theme="dark"] {
   --crimson-fill: 158 27 44;
   --crimson-hover: 184 34 52;
   --heading-red: 255 119 131;
+  --testimonial-card: 35 37 44;
   --glass-bg: 42 44 54;
   --glass-edge: 194 196 207;
   --glass-shine: 255 255 255;
@@ -76,6 +78,9 @@ button:disabled { cursor: not-allowed; opacity: 0.6; }
   .faq-panel { display: grid; grid-template-rows: 0fr; opacity: 0; transform: translateY(-4px); visibility: hidden; transition: grid-template-rows 320ms cubic-bezier(0.2, 0.75, 0.3, 1), opacity 220ms ease, transform 220ms ease, visibility 0s linear 320ms; }
   .faq-panel[data-open="true"] { grid-template-rows: 1fr; opacity: 1; transform: translateY(0); visibility: visible; transition: grid-template-rows 320ms cubic-bezier(0.2, 0.75, 0.3, 1), opacity 220ms ease, transform 220ms ease, visibility 0s; }
   .faq-panel-inner { min-height: 0; overflow: hidden; }
+  .faq-board { box-shadow: 0 12px 32px rgb(var(--ink) / 0.055); }
+  .faq-item { box-shadow: 0 1px 2px rgb(var(--ink) / 0.025); transition: border-color 220ms ease, box-shadow 260ms ease, background-color 220ms ease; }
+  .faq-item[data-open="true"] { background-color: rgb(var(--crimson) / 0.035); box-shadow: 0 8px 20px rgb(var(--ink) / 0.045), inset 3px 0 0 rgb(var(--crimson) / 0.72); }
   .image-zoom { transition: transform 450ms cubic-bezier(0.2, 0.75, 0.3, 1); }
   .group:hover .image-zoom { transform: scale(1.025); }
   .duck-float { animation: duck-float 5s ease-in-out infinite; }
@@ -88,6 +93,9 @@ button:disabled { cursor: not-allowed; opacity: 0.6; }
   .hero-course-dot { position: relative; }
   .hero-course-dot::after { content: ""; position: absolute; inset: -4px; border: 1px solid rgb(var(--crimson) / 0.48); border-radius: 9999px; animation: course-dot-ring 2.6s ease-out infinite; }
   .testimonial-change { animation: testimonial-change 360ms cubic-bezier(0.2, 0.75, 0.3, 1) both; }
+  .testimonial-card { background-color: rgb(var(--testimonial-card)); border: 1px solid rgb(var(--ink) / 0.08); box-shadow: 0 16px 40px rgb(var(--ink) / 0.06); }
+  .testimonial-arrow { transition: transform 200ms ease, border-color 200ms ease, background-color 200ms ease, color 200ms ease; }
+  .testimonial-quote-enter { animation: testimonial-quote-enter 260ms ease-out both; }
   .container-x { @apply mx-auto w-full max-w-6xl px-5 sm:px-8; }
 }
 
@@ -115,6 +123,11 @@ button:disabled { cursor: not-allowed; opacity: 0.6; }
 @keyframes testimonial-change {
   from { transform: translateY(8px); opacity: 0.82; }
   to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes testimonial-quote-enter {
+  from { opacity: 0.78; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .glass-surface {
@@ -164,7 +177,7 @@ button:disabled { cursor: not-allowed; opacity: 0.6; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  a, button, input, textarea, .btn, .interactive-card, .interactive-row, .image-zoom, .icon-action {
+  a, button, input, textarea, .btn, .interactive-card, .interactive-row, .faq-item, .image-zoom, .icon-action {
     transition-duration: 0.01ms !important;
   }
   .faq-panel, .faq-panel[data-open="true"] { transition-duration: 0.01ms !important; transition-delay: 0s !important; }
@@ -173,6 +186,7 @@ button:disabled { cursor: not-allowed; opacity: 0.6; }
   .group:hover .image-zoom, .group:hover [class*="group-hover:scale"] { transform: none !important; }
   .duck-float { animation: none !important; }
   .hero-course-dot::after, .testimonial-change { animation: none !important; }
+  .testimonial-quote-enter { animation: none !important; }
   .btn::after { display: none; }
   .nav-link::after { transition: none !important; }
 }
