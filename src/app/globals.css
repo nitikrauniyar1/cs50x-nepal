@@ -78,9 +78,9 @@ button:disabled { cursor: not-allowed; opacity: 0.6; }
   .faq-panel { display: grid; grid-template-rows: 0fr; opacity: 0; transform: translateY(-4px); visibility: hidden; transition: grid-template-rows 320ms cubic-bezier(0.2, 0.75, 0.3, 1), opacity 220ms ease, transform 220ms ease, visibility 0s linear 320ms; }
   .faq-panel[data-open="true"] { grid-template-rows: 1fr; opacity: 1; transform: translateY(0); visibility: visible; transition: grid-template-rows 320ms cubic-bezier(0.2, 0.75, 0.3, 1), opacity 220ms ease, transform 220ms ease, visibility 0s; }
   .faq-panel-inner { min-height: 0; overflow: hidden; }
-  .faq-board { box-shadow: 0 12px 32px rgb(var(--ink) / 0.055); }
-  .faq-item { box-shadow: 0 1px 2px rgb(var(--ink) / 0.025); transition: border-color 220ms ease, box-shadow 260ms ease, background-color 220ms ease; }
-  .faq-item[data-open="true"] { background-color: rgb(var(--crimson) / 0.035); box-shadow: 0 8px 20px rgb(var(--ink) / 0.045), inset 3px 0 0 rgb(var(--crimson) / 0.72); }
+  .faq-board { box-shadow: 0 10px 24px rgb(var(--ink) / 0.04); }
+  .faq-item { transition: border-color 220ms ease, background-color 220ms ease; }
+  .faq-item[data-open="true"] { background-color: rgb(var(--crimson) / 0.025); box-shadow: inset 3px 0 0 rgb(var(--crimson) / 0.72); }
   .image-zoom { transition: transform 450ms cubic-bezier(0.2, 0.75, 0.3, 1); }
   .group:hover .image-zoom { transform: scale(1.025); }
   .duck-float { animation: duck-float 5s ease-in-out infinite; }

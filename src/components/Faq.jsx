@@ -12,29 +12,19 @@ export default function Faq({ page = false }) {
   const [open, setOpen] = useState(0);
 
   return (
-    <section id="faqs" className="py-12 sm:py-16">
+    <section id="faqs" className="bg-paper py-14 sm:py-16">
       <div className="container-x">
-        <header className="flex flex-col justify-between gap-5 border-b border-ink/10 pb-6 sm:flex-row sm:items-end sm:gap-8">
-          <div>
-            <p className="eyebrow mb-3 inline-flex items-center gap-2 text-crimson">
-              <span className="h-1.5 w-1.5 rounded-full bg-crimson" aria-hidden="true" />
-              FAQ / QUICK ANSWERS
-            </p>
-            <MainHeading className="font-display text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
-              Good questions. Clear answers.
-            </MainHeading>
-          </div>
-          <div className="flex items-center gap-4 sm:max-w-sm">
-            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gold/25 font-mono text-sm font-bold text-ink">
-              {String(faqs.length).padStart(2, "0")}
-            </span>
-            <p className="text-sm leading-relaxed text-ink-mute">
-              A quick guide to the course, syllabus, enrollment, and what to expect from CS50 AI.
-            </p>
-          </div>
+        <header className="mb-7 max-w-4xl sm:mb-9">
+          <p className="eyebrow mb-3 text-crimson">FAQs</p>
+          <MainHeading className="font-display text-4xl font-bold leading-[1.06] tracking-tight text-crimson sm:text-5xl lg:text-6xl">
+            Frequently asked questions.
+          </MainHeading>
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-ink-mute sm:text-lg">
+            Details about the course, weekly topics, enrollment, and certificates.
+          </p>
         </header>
 
-        <div className="faq-board mt-6 overflow-hidden rounded-2xl border border-ink/10 bg-paper">
+        <div className="faq-board overflow-hidden rounded-2xl border border-ink/10 bg-sand">
           {faqs.map((faq, index) => {
             const isOpen = open === index;
 
@@ -51,18 +41,12 @@ export default function Faq({ page = false }) {
                     aria-expanded={isOpen}
                     aria-controls={`faq-panel-${index}`}
                     onClick={() => setOpen(isOpen ? -1 : index)}
-                    className="group grid min-h-14 w-full grid-cols-[2.25rem_minmax(0,1fr)_2.25rem] items-center gap-3 px-3 py-3 text-left sm:min-h-[60px] sm:grid-cols-[3rem_minmax(0,1fr)_2.5rem] sm:gap-4 sm:px-5"
+                    className="group flex min-h-[72px] w-full items-center justify-between gap-5 px-4 py-4 text-left sm:min-h-[84px] sm:px-6"
                   >
-                    <span
-                      aria-hidden="true"
-                      className={`font-mono text-xs font-semibold tabular-nums ${isOpen ? "text-crimson" : "text-ink-mute"}`}
-                    >
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                    <span className={`min-w-0 font-display text-base font-semibold leading-snug transition-colors sm:text-lg ${isOpen ? "text-crimson" : "text-ink group-hover:text-crimson"}`}>
+                    <span className={`min-w-0 flex-1 font-display text-lg font-semibold leading-snug transition-colors sm:text-2xl ${isOpen ? "text-crimson" : "text-ink group-hover:text-crimson"}`}>
                       {faq.q}
                     </span>
-                    <span className={`flex h-9 w-9 items-center justify-center rounded-xl transition-all duration-300 ${isOpen ? "bg-crimson-fill text-white" : "bg-gold/20 text-ink group-hover:bg-gold/50"}`}>
+                    <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full transition-all duration-300 ${isOpen ? "bg-crimson-fill text-white" : "border border-gold/35 bg-gold/15 text-ink group-hover:bg-gold/40"}`}>
                       <Plus
                         size={17}
                         aria-hidden="true"
@@ -81,10 +65,9 @@ export default function Faq({ page = false }) {
                   className="faq-panel"
                 >
                   <div className="faq-panel-inner">
-                    <div className="grid grid-cols-[2.25rem_minmax(0,1fr)_2.25rem] gap-3 px-3 pb-4 sm:grid-cols-[3rem_minmax(0,1fr)_2.5rem] sm:gap-4 sm:px-5 sm:pb-5">
-                      <span aria-hidden="true" className="mt-1 h-full border-l border-gold/50 justify-self-center" />
+                    <div className="pb-5 pl-4 pr-5 sm:pb-6 sm:pl-6 sm:pr-16">
                       <div>
-                        <p className="max-w-3xl text-sm leading-relaxed text-ink-mute sm:text-base">{faq.a}</p>
+                        <p className="max-w-3xl text-base leading-relaxed text-ink-mute sm:text-lg">{faq.a}</p>
                         {faq.cta && (
                           <ExtLink
                             href={faq.cta.href}
@@ -95,7 +78,6 @@ export default function Faq({ page = false }) {
                           </ExtLink>
                         )}
                       </div>
-                      <span aria-hidden="true" />
                     </div>
                   </div>
                 </div>
