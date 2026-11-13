@@ -31,7 +31,7 @@ export default function Team({ page = false }) {
             {instructors.map((p) => (
               <li key={p.name}>
                 <Reveal className="group interactive-card glass-surface flex gap-5 rounded-2xl p-4">
-                  <span aria-hidden="true" className="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-crimson/10 font-display text-2xl font-bold tracking-wide text-crimson ring-1 ring-inset ring-crimson/15 sm:h-24 sm:w-24">
+                  <span aria-hidden="true" className="team-avatar flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-crimson/10 font-display text-2xl font-bold tracking-wide text-crimson ring-1 ring-inset ring-crimson/15 sm:h-24 sm:w-24">
                     {initials(p.name)}
                   </span>
                   <div className="min-w-0">

@@ -22,7 +22,7 @@ export default function Hero() {
         <div>
           <Reveal>
             <p className="eyebrow mb-6 inline-flex items-center gap-2 rounded-full bg-gold/25 px-3 py-1.5 text-ink">
-              <span className="h-2 w-2 rounded-full bg-crimson" aria-hidden="true" />
+              <span className="hero-course-dot h-2 w-2 rounded-full bg-crimson" aria-hidden="true" />
               {site.course}
             </p>
           </Reveal>

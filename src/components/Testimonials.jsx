@@ -19,7 +19,7 @@ export default function Testimonials({ page = false }) {
           Stories from the learners who came before you.
         </MainHeading>
 
-        <figure className="interactive-card glass-surface mt-10 max-w-4xl rounded-3xl p-6 sm:p-8" aria-live="polite">
+        <figure key={i} className="testimonial-change interactive-card glass-surface mt-10 max-w-4xl rounded-3xl p-6 sm:p-8" aria-live="polite">
           <Quote className="text-crimson" size={40} aria-hidden="true" />
           <blockquote className="mt-4 font-display text-2xl leading-snug sm:text-4xl">{t.quote}</blockquote>
           <figcaption className="mt-6">

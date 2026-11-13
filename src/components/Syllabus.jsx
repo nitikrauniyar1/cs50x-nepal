@@ -44,7 +44,7 @@ export default function Syllabus() {
                 aria-controls="week-panel"
                 tabIndex={i === active ? 0 : -1}
                 onClick={() => setActive(i)}
-                className={`w-full min-w-0 rounded-2xl border px-5 py-4 text-left transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md ${
+                className={`syllabus-tab w-full min-w-0 rounded-2xl border px-5 py-4 text-left ${
                   i === active ? "border-crimson-fill bg-crimson-fill text-white" : "glass-control hover:border-crimson/50"
                 }`}
               >
@@ -54,7 +54,7 @@ export default function Syllabus() {
             ))}
           </div>
 
-          <div id="week-panel" role="tabpanel" aria-labelledby={`week-tab-${active}`} className="interactive-card glass-surface min-w-0 rounded-3xl p-6 sm:p-10">
+          <div key={active} id="week-panel" role="tabpanel" aria-labelledby={`week-tab-${active}`} className="testimonial-change interactive-card glass-surface min-w-0 rounded-3xl p-6 sm:p-10">
             <p className="eyebrow text-crimson">Week {week.week}</p>
             <h3 className="mt-2 font-display text-3xl font-bold">{week.title}</h3>
             <p className="mt-3 max-w-2xl text-ink-mute">{week.summary}</p>
