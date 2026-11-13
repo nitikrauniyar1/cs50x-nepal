@@ -1,30 +1,38 @@
-# CS50x Nepal: public website (Next.js, JavaScript, Tailwind)
+# CS50x Nepal
 
-A locally routed, multi-page redesign of the CS50x Nepal / CS50 AI site. It needs no database, CMS, API keys, or remote fonts. It uses fast system font fallbacks.
+The CS50x Nepal website shares information about the program, its curriculum, and the people who teach and support it. Visitors can explore the course, read learner stories, review the code of conduct, and find enrollment information.
 
-## Run it
+## Website
+
+- Home page with an introduction to the program
+- About, course, and full syllabus pages
+- Instructor, mentor, and guest speaker profiles
+- Learner stories and frequently asked questions
+- Enrollment information and code of conduct
+- Responsive layout with light and dark themes
+
+## Run locally
+
+Requires Node.js 18.17 or newer.
+
 ```bash
 npm install
-npm run dev        # http://localhost:3000
+npm run dev
 ```
-Production: `npm run build && npm start`. Lint: `npm run lint`.
 
-Requires Node.js 18.17 or newer. `npm install` needs internet once; after that the site runs offline.
+Open [http://localhost:3000](http://localhost:3000) in your browser. To create and run a production build:
 
-## Deploy
-Any Node host (Vercel, Netlify, a VPS with `npm start`). Optionally set `NEXT_PUBLIC_SITE_URL` (see `.env.example`) so the sitemap, robots.txt and Open Graph URLs use your domain.
+```bash
+npm run build
+npm start
+```
 
-## Edit content (no component changes needed)
-All in `src/data/`: `courses.js` (intro, outcomes, syllabus), `instructors.js`, `mentors.js` (plus guest speakers), `supporters.js`, `testimonials.js`, `faqs.js`, `links.js` (URLs, nav, footer).
+## Content and assets
 
-**FAQ:** only questions answerable from verified site content are included. The official site lists 13; add the rest to `faqs.js` as `{ q, a }` objects.
+Page content is maintained in `src/data/`. Shared images are configured in `src/config/images.js` and stored in `public/images/`. To use a new image, add it under `public/images/` and update its path in the relevant data or image configuration file.
 
-## Replace images
-Everything is referenced from `src/config/images.js`. Put your file in `public/images/...` and update the path there, or overwrite the file keeping its name.
-- Logo: `public/images/brand/logo-mark.svg` is used in the header and footer; `src/app/icon.svg` is the browser favicon.
-- Portraits: generic placeholders. Per person, add `photo: "/images/people/name.jpg"` in `instructors.js`.
-- Partner logos: add `logo: "/images/partners/file.svg"` in `supporters.js` (names show as text until then).
-- Social share image: `public/images/og/og-cover.png` (1200x630).
+The site uses Next.js, React, and Tailwind CSS. Its pages and shared layout are in `src/app/`, and reusable page sections are in `src/components/`.
 
-## Structure
-`src/app` (layout, page, sitemap, robots) · `src/components` (sections) · `src/data` (content) · `src/config/images.js`.
+## Deployment
+
+Deploy to a Node.js hosting provider. Set `NEXT_PUBLIC_SITE_URL` to the public site address so sitemap and social sharing metadata use the correct domain.
