@@ -4,7 +4,8 @@ import { useState } from "react";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import { testimonials } from "@/data/testimonials";
 
-export default function Testimonials() {
+export default function Testimonials({ page = false }) {
+  const MainHeading = page ? "h1" : "h2";
   const [i, setI] = useState(0);
   const total = testimonials.length;
   const t = testimonials[i];
@@ -14,9 +15,9 @@ export default function Testimonials() {
     <section id="stories" className="bg-sand py-16 sm:py-20">
       <div className="container-x">
         <p className="eyebrow text-crimson">Testimonials</p>
-        <h2 className="mt-4 max-w-2xl font-display text-4xl font-bold leading-tight sm:text-5xl">
+        <MainHeading className="mt-4 max-w-2xl font-display text-4xl font-bold leading-tight sm:text-5xl">
           Stories from the learners who came before you.
-        </h2>
+        </MainHeading>
 
         <figure className="interactive-card glass-surface mt-10 max-w-4xl rounded-3xl p-6 sm:p-8" aria-live="polite">
           <Quote className="text-crimson" size={40} aria-hidden="true" />

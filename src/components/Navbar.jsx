@@ -90,7 +90,7 @@ export default function Navbar() {
             {darkMode ? <Sun size={18} aria-hidden="true" /> : <Moon size={18} aria-hidden="true" />}
           </button>
           <ExtLink href={links.enroll} className="btn-gold hidden !py-2 !bg-gold !text-[#151D49] sm:inline-flex">
-            Enroll <ArrowUpRight size={16} aria-hidden="true" />
+            Enrollment <ArrowUpRight size={16} aria-hidden="true" />
           </ExtLink>
           <button
             type="button"
@@ -106,7 +106,7 @@ export default function Navbar() {
       </nav>
 
       {open && (
-        <div id="mobile-menu" className="glass-surface h-[calc(100vh-4rem)] overflow-y-auto lg:hidden">
+        <div id="mobile-menu" className="glass-surface h-[calc(100vh-4rem)] supports-[height:100dvh]:h-[calc(100dvh-4rem)] overflow-y-auto lg:hidden">
           <ul className="container-x flex flex-col py-6">
             {navItems.map((item) => (
               <li key={item.href} className="border-b border-ink/10">
@@ -122,7 +122,7 @@ export default function Navbar() {
             ))}
             <li className="pt-8">
               <ExtLink href={links.enroll} className="btn-gold w-full">
-                Enroll in CS50 AI <ArrowUpRight size={16} aria-hidden="true" />
+                Enrollment information <ArrowUpRight size={16} aria-hidden="true" />
               </ExtLink>
             </li>
           </ul>

@@ -3,7 +3,7 @@ export const course = {
   title: "CS50 AI with Python",
   intro:
     "CS50 AI is a specialized adaptation of Harvard University's CS50 Introduction to Artificial Intelligence with Python, designed to introduce students to the fundamentals of artificial intelligence. Guided by instructors from Purwanchal Campus, it covers core AI concepts through hands-on projects and real-world examples.",
-  aboutHeading: "Following a very successful adaptation of CS50x in Nepal, we are back with CS50 AI.",
+  aboutHeading: "A new chapter in AI learning for Nepal.",
   aboutBody:
     "The course is ideal for those who want fundamental knowledge in AI, equipping them with the skills needed to pursue further studies or careers in this transformative field.",
 };

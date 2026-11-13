@@ -4,7 +4,7 @@ export const site = {
   course: "CS50 AI with Python",
   tagline: "The golden duck has returned.",
   description:
-    "CS50 AI with Python is an adaptation of Harvard's famous CS50 course at the doorstep of IOE, Purwanchal Campus.",
+    "Explore CS50 AI with Python at CS50x Nepal, with a practical syllabus in Python, data science, and artificial intelligence at IOE Purwanchal Campus.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://cs50xnepal.ioepc.edu.np",
 };
 
@@ -14,9 +14,10 @@ export const links = {
   localTeam: "/team",
   codeOfConduct: "/code-of-conduct",
   hackathon: "https://cs50xnepal.ioepc.edu.np/hackathon",
+  excess: "https://excess.ioepc.edu.np/",
   previousEdition: "https://cs50xnepal.vercel.app/",
-  harvardCourse: "https://cs50.harvard.edu/ai/2024/",
-  certificate: "https://cs50.harvard.edu/x/2024/certificate/",
+  harvardCourse: "https://cs50.harvard.edu/ai/",
+  certificate: "https://cs50.harvard.edu/ai/certificate/",
   youtube: "https://www.youtube.com/@cs50xnepal",
   facebook: "https://www.facebook.com/profile.php?id=61554706883546&mibextid=kFxxJD",
   x: "https://x.com/CS50xNepal?t=zhIVQxpn57jrtVVsYZJG0w&s=09",

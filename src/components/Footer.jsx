@@ -26,7 +26,7 @@ export default function Footer() {
             Explore artificial intelligence through the CS50 curriculum, adapted for learners in Nepal at IOE Purwanchal Campus.
           </p>
           <ExtLink href={links.enroll} className="btn-gold mt-4 !px-5 !py-2.5">
-            Get started <ArrowUpRight size={16} aria-hidden="true" />
+            Enrollment status <ArrowUpRight size={16} aria-hidden="true" />
           </ExtLink>
           <ul className="mt-5 flex gap-3">
             {socials.map(({ label, href, Icon }) => (

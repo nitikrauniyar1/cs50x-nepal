@@ -5,7 +5,9 @@ import { Plus, Minus, ArrowUpRight } from "lucide-react";
 import ExtLink from "./ExtLink";
 import { faqs } from "@/data/faqs";
 
-export default function Faq() {
+export default function Faq({ page = false }) {
+  const MainHeading = page ? "h1" : "h2";
+  const QuestionHeading = page ? "h2" : "h3";
   const [open, setOpen] = useState(0);
 
   return (
@@ -13,14 +15,14 @@ export default function Faq() {
       <div className="container-x grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
         <div>
           <p className="eyebrow text-crimson">FAQs</p>
-          <h2 className="mt-4 font-display text-4xl font-bold leading-tight sm:text-5xl">Frequently asked questions.</h2>
+          <MainHeading className="mt-4 font-display text-4xl font-bold leading-tight sm:text-5xl">Frequently asked questions.</MainHeading>
         </div>
         <div className="divide-y divide-ink/15 border-y border-ink/15">
           {faqs.map((f, idx) => {
             const isOpen = open === idx;
             return (
               <div key={f.q}>
-                <h3>
+                <QuestionHeading>
                   <button
                     type="button"
                     id={`faq-btn-${idx}`}
@@ -43,7 +45,7 @@ export default function Faq() {
                       />
                     </span>
                   </button>
-                </h3>
+                </QuestionHeading>
                 <div
                   id={`faq-panel-${idx}`}
                   role="region"

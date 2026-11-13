@@ -42,7 +42,7 @@ export default function Hero() {
           <Reveal delay={0.24}>
             <div className="mt-7 flex flex-wrap items-center gap-4">
               <ExtLink href={links.enroll} className="btn-gold">
-                Get started <ArrowUpRight size={16} aria-hidden="true" />
+                Enrollment status <ArrowUpRight size={16} aria-hidden="true" />
               </ExtLink>
               <ExtLink href={links.syllabus} className="btn-ghost">
                 See the syllabus <ArrowDown size={16} aria-hidden="true" />

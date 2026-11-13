@@ -10,12 +10,12 @@ export const faqs = [
   },
   {
     q: "How do I enroll in CS50 AI?",
-    a: "Use the enrollment page on the official CS50x Nepal site.",
+    a: "Registration for this edition has closed. Check the enrollment page for the latest status and links to future course announcements.",
     cta: { label: "Go to enrollment", href: links.enroll },
   },
   {
     q: "Where can I see what is taught each week?",
-    a: "The five-week syllabus is summarized on this page, and the full syllabus is on the official site.",
+    a: "The five-week syllabus includes weekly topics and practical sessions, from Python and data foundations to applied machine learning projects.",
     cta: { label: "Open the full syllabus", href: links.syllabus },
   },
   {

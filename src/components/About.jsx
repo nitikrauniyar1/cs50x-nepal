@@ -6,7 +6,10 @@ import { images } from "@/config/images";
 import { course } from "@/data/courses";
 import { links } from "@/data/links";
 
-export default function About() {
+export default function About({ page = false }) {
+  const MainHeading = page ? "h1" : "h2";
+  const SubHeading = page ? "h2" : "h3";
+
   return (
     <>
       <section id="about" className="bg-sand py-16 sm:py-20">
@@ -23,10 +26,10 @@ export default function About() {
           <div>
             <Reveal>
               <p className="eyebrow text-crimson">About us</p>
-              <h2 className="mt-4 font-display text-4xl font-bold leading-tight sm:text-5xl">{course.aboutHeading}</h2>
+              <MainHeading className="mt-4 font-display text-4xl font-bold leading-tight sm:text-5xl">{course.aboutHeading}</MainHeading>
             </Reveal>
             <Reveal delay={0.1}>
-              <h3 className="mt-6 font-display text-2xl text-gold-deep">What is CS50 AI?</h3>
+              <SubHeading className="mt-6 font-display text-2xl text-gold-deep">What is CS50 AI?</SubHeading>
               <p className="mt-3 leading-relaxed text-ink-mute">{course.intro}</p>
               <p className="mt-4 leading-relaxed text-ink-mute">{course.aboutBody}</p>
               <ExtLink href={links.harvardCourse} className="mt-6 inline-flex items-center gap-1.5 font-semibold text-crimson underline-offset-4 hover:underline">

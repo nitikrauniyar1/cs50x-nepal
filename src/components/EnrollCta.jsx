@@ -16,7 +16,7 @@ export default function EnrollCta() {
         </p>
         <div className="mt-7 flex flex-wrap justify-center gap-4">
           <ExtLink href={links.enroll} className="btn bg-gold text-[#151D49] hover:bg-[#ffc633]">
-            Get started <ArrowUpRight size={16} aria-hidden="true" />
+            View enrollment status <ArrowUpRight size={16} aria-hidden="true" />
           </ExtLink>
           <ExtLink href={links.youtube} className="btn border border-white/50 hover:bg-white hover:text-crimson-fill">
             Subscribe on YouTube
